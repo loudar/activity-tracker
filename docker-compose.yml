@@ -1,10 +1,4 @@
-﻿services:
-  lifemonitor:
-    image: lifemonitor
-    build:
-      context: .
-      dockerfile: Dockerfile
-      
+﻿services:      
   influxdb2:
     image: influxdb:2
     hostname: influxdb
