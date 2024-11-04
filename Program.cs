@@ -10,7 +10,8 @@ builder.Services.AddSingleton<ApplicationTracker>();
 builder.Services.AddSingleton<InfluxDBClient>(_ =>
 {
     IConfigurationSection config = builder.Configuration.GetSection("WorkerSettings");
-    return new InfluxDBClient(config["InfluxDbUrl"], config["InfluxDbToken"]);
+    Console.WriteLine(config["InfluxDbUrl"] + " | " + config["InfluxDbToken"]);
+    return new InfluxDBClient(config["InfluxDbUrl"] + "?token=" + config["InfluxDbToken"]);
 });
 
 IHost host = builder.Build();
