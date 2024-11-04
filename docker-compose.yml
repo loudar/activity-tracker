@@ -1,0 +1,6 @@
+﻿services:
+  lifemonitor:
+    image: lifemonitor
+    build:
+      context: .
+      dockerfile: Dockerfile
